@@ -1,0 +1,2421 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Releasenotes - AndroidAPS 3.2 Dokumentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#release-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AndroidAPS 3.2 Dokumentation" class="md-header__button md-logo" aria-label="AndroidAPS 3.2 Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AndroidAPS 3.2 Dokumentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Releasenotes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/de/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/peterleimbach/aapsmkdocstest" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../preparing/" class="md-tabs__link">
+          
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../setting-up-the-reporting-server/" class="md-tabs__link">
+          
+  
+    
+  
+  Setting up AAPS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../remote-control/" class="md-tabs__link">
+          
+  
+    
+  
+  Remote Control and Following
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Sandbox/sandbox1/" class="md-tabs__link">
+          
+  
+    
+  
+  Sandbox
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AndroidAPS 3.2 Dokumentation" class="md-nav__button md-logo" aria-label="AndroidAPS 3.2 Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    AndroidAPS 3.2 Dokumentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/peterleimbach/aapsmkdocstest" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preparing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preparing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Setting up AAPS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Setting up AAPS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting-up-the-reporting-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setting up the reporting server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-AAPS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building AAPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Transferring-and-installing-AAPS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transfering and Installing AAPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-wizard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup Wizard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change-configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Change AAPS configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Advanced
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sandbox/sandbox1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sandbox 1a
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sandbox/sandbox2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sandbox 2a
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Remote Control and Following
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Remote Control and Following
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remote-control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remote Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../following-only/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Following Only
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Sandbox
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Sandbox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sandbox/sandbox1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sandbox 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sandbox/sandbox2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sandbox 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#android-version-and-aaps-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Android version and AAPS version
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Android version and AAPS version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#android-9-and-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Android 9 and up
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Android 8
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Android 7
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wearos-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      WearOS version
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-3200-dedicated-to-philoul" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 3.2.0.0 dedicated to @Philoul
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 3.2.0.0 dedicated to @Philoul">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-hints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important hints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-comments-on-using-v3-versus-v1-api-for-nightscout-with-aaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important comments on using v3 versus v1 API for Nightscout with AAPS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-310" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 3.1.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 3.1.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-hints_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important hints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-300" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 3.0.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 3.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-hints_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important hints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparation steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-282" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.8.2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.8.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-2811" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.8.1.1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.8.1.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-hints_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important hints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#major-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-280" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.8.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.8.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-hints_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important hints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-270" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.7.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.7.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-2614" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.6.1.4
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.6.1.4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-2613" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.6.1.3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.6.1.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-2612" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.6.1.2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.6.1.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-2611" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.6.1.1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.6.1.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-261" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.6.1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.6.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-260" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.6.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.6.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-251" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.5.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-250" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.5.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.5.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important notes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-this-update-for-me-currently-is-not-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      Is this update for me? Currently is NOT supported
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-222" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.2.2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.2.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 2.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version 2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-new-features_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Major new features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settings-to-adjust-when-switching-from-ama-to-smb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Settings to adjust when switching from AMA to SMB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overview-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview tab
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Watch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      New plugins
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/peterleimbach/aapsmkdocstest/edit/main/docs/Installing-AndroidAPS/Releasenotes.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<p>(Releasenotes-release-notes)=</p>
+<h1 id="release-notes">Release notes</h1>
+<p>Please follow the instructions in the <a href="../Update-to-new-version/">update manual</a>. You can also find a troubleshooting section addressing the most common difficulties when updating on the update manual page.</p>
+<p>You will receive the following information as soon as a new update is available:</p>
+<p>```{image} ../images/AAPS_LoopDisable90days.png
+:alt: Update info
+<div class="highlight"><pre><span></span><code>Then you have 60 days to update. If you do not update within these 60 days AAPS will fall back to LGS (low glucose suspend - see [glossary](../Getting-Started/Glossary.md)) as in [objective 6](../Usage/Objectives.html).
+
+If you do not update for another 30 days (90 days from new release date) AAPS will switch to Open Loop.
+
+Please understand that this change is not intended to bug you but is due to safety reasons. New versions of AAPS do not only provide new features but also important safety fixes. Therefore it is necessary that every user updates a.s.a.p.. Unfortunately there are still bug reports from very old versions so this is a try to improve safety for every single user and the whole DIY community. Thanks for your understanding.
+
+```{admonition} First version of AAPS
+:class: note
+
+The first test version started already in 2015. In 2016 has been the first released version.
+
+The chronology of these releases is not available at the moment but as this questions is asked severeal times we document it here.
+</code></pre></div></p>
+<h2 id="android-version-and-aaps-version">Android version and AAPS version</h2>
+<p>If your smartphone uses an Android Version older than Android 9 you will not be able to use AAPS v3 and up as it requires at least Android 9.</p>
+<p>In order to allow users with older Android to use older version of AAPS new versions were pushed which only change version verification. No other improvements are included.</p>
+<h3 id="android-9-and-up">Android 9 and up</h3>
+<ul>
+<li>Use latest AAPS version</li>
+<li>Download AAPS Code from <a href="https://github.com/nightscout/AndroidAPS">https://github.com/nightscout/AndroidAPS</a></li>
+</ul>
+<h3 id="android-8">Android 8</h3>
+<ul>
+<li>Use AAPS version <strong>2.8.2.1</strong></li>
+<li>Download AAPS Code from <a href="https://github.com/nightscout/AndroidAPS">https://github.com/nightscout/AndroidAPS</a> branch 2.8.2.1</li>
+</ul>
+<h3 id="android-7">Android 7</h3>
+<ul>
+<li>Use AAPS version <strong>2.6.2</strong></li>
+<li>Download AAPS Code from <a href="https://github.com/nightscout/AndroidAPS">https://github.com/nightscout/AndroidAPS</a> branch 2.6.2</li>
+</ul>
+<h2 id="wearos-version">WearOS version</h2>
+<ul>
+<li>AAPS 3.2 requires at least WearOS API level 28 (Android 9)</li>
+</ul>
+<h2 id="version-3200-dedicated-to-philoul">Version 3.2.0.0 dedicated to @Philoul</h2>
+<p>Release date: 23-10-2023</p>
+<h3 id="important-hints">Important hints</h3>
+<ul>
+<li>NS 15 is required</li>
+<li>While using websockets in NS v3 plugin treatments entered through NS UI (plus button) and other applications using v1 API are not sent to AAPS. This will be fixed in future release of NS. Always use the same client (v1 or v3) in AAPS and AAPSClient until NS fully switch to v3 internaly. The same is valid for AAPS and AAPSClient itself.</li>
+<li>Websockets in v3 plugin works similiar way to v1 plugin. Without websockets enabled AAPS schedules regularly downloads from NS which should lead to lower power consumption because NS is not permanently connected. On the oposite side it means delays in exchanging data. Please read <a href="Important-comments-on-using-v3-versus-v1-API-for-Nightscout-with-AAPS">here</a> the important comments from the dev team before you use it!</li>
+<li>If you are using xdrip as cgm source you must select it again after update due to internal changes</li>
+<li>Tidepool can be used as a replacement of NS to pass first objective</li>
+<li>If you send to xDrip+ you must configure xDrip synchronization plugin. In order to receive BGs from AAPS in xDrip it must be selected source "xDrip+ Sync Follower"</li>
+<li>If you want to switch to ComboV2 driver, Ruffy must be uninstalled and pump paired again to AAPS</li>
+<li>In order to use DynISF plugin you have to start Objective 11 (all previous must be in finished state to allow start of 11)</li>
+</ul>
+<h3 id="changes">Changes</h3>
+<ul>
+<li>EOPatch2 / GlucomenDay pump driver @jungsomyeonggithub @MilosKozak</li>
+<li>ComboV2 pump driver (no need of Ruffy) @dv1</li>
+<li>Medtrum Nano driver @jbr7rr</li>
+<li>Korean DanaI support @MilosKozak</li>
+<li>Glunovo CGM support @christinadamianou</li>
+<li>G7 support @MilosKozak @rICTx-T1D @khskekec</li>
+<li>NSClient v3 plugin @MilosKozak</li>
+<li>Tidepool support @MilosKozak</li>
+<li>Smoothing plugin @MilosKozak, @justmara, Exponential smoothing @nichi (Tsunami), Average smoothing @jbr7rr</li>
+<li>DynamicISF plugin @Chris Wilson, @tim2000s</li>
+<li>Garmin watchface &amp; HeartRate support @buessow</li>
+<li>New logo @thiagomsoares</li>
+<li>New watchface @Philoul</li>
+<li>fixed tons of issues from 3.1 version</li>
+<li>allow add notes on more places @Sergey Zorchenko</li>
+<li>UI fixes @MilosKozak @osodebailar @Andries-Smit @yodax @Philoul @dv1 @paravoid</li>
+<li>new SMS commands LOOP LGS/CLOSED @pzadroga</li>
+<li>wear translations @Andries-Smit</li>
+<li>xdrip communication moved to separate module @MilosKozak</li>
+<li>internal changes: updated libs versions, rx3 migration, new modules structure @MilosKozak</li>
+<li>Diaconn driver fixes @miyeongkim</li>
+<li>more database maintenance options @MilosKozak</li>
+<li>AAPSClient provides info if main phone is plugged in electricity @MilosKozak</li>
+<li>Change in BolusWizard. If CGM is not available percentage is ignored (ie 100% is used)</li>
+<li>migration to kts build system @MilosKozak</li>
+<li>improved CI integration @MilosKozak @buessow</li>
+<li>tests cleaup @ryanhaining @MilosKozak</li>
+<li>new 110k+ lines of code, changed 240k lines, 6884 changed files</li>
+</ul>
+<p>(Important-comments-on-using-v3-versus-v1-API-for-Nightscout-with-AAPS)=</p>
+<h3 id="important-comments-on-using-v3-versus-v1-api-for-nightscout-with-aaps">Important comments on using v3 versus v1 API for Nightscout with AAPS</h3>
+<p>v1 is the old protocol used for exchanging data between NS web site and NS server. It has many limitations
+- v1 sends only 2 days of data
+- v1 send all 2 days data on every reconnection
+- using websockets is mandatory = permanent connection, more battery compsumption
+- during frequent disconnects to NS connection is paused for 15 minutes to prevent high data usage</p>
+<p>v3 is new protocol. More safe and efficient
+- while using tokens you can better define access rights
+- protocol is more efficient on both sides (AAPS &amp; NS)
+- It can read up to 3 months of data from NS
+- you can choose to use or to not use websockets on every device (using means faster updates, not using means lower power compsumption, but slower updates ie. minutes)
+- NSClient is not paused on disconnections</p>
+<p>LIMITATIONS
+- NS 15 must be used with AAPS 3.2
+- v3 doesn't see updates done by v1 protocol (probably it will be resolved in some future version of NS)
+- in opposite because of old uneffective method of tracking changes v1 see changes done by v3
+- remember NS still uses v1 internaly so far thus is not possible to enter data through NS web UI if you are using v3. You must use AAPSClient on SMS if you want enter data remotely</p>
+<p>RECOMMENDED SETTING
+- because of all above you should choose only one method and use it on all devices (remember all other uploaders at time of writing this are using v1). If you decide to go to v3, select v3 in AAPS and all AAPSClients
+- v3 is preffered because of efficiency
+- using websockets or not using with v3 depends on your preference
+- it HIGHLY recommended to let AAPS gather all data and then upload it to NS as a single uploader. All other devices/applications should only read from NS. By doing it you'll prevent conflicts and sync errors. This is valid for getting BG data to NS using Dexcom Share connector etc. too</p>
+<h2 id="version-310">Version 3.1.0</h2>
+<p>Release date: 19-07-2022</p>
+<p>(Releasenotes-important-hints-3-1-0)=</p>
+<h3 id="important-hints_1">Important hints</h3>
+<ul>
+<li>after update uninstall Wear app and install new version</li>
+<li>Omnipod users: update on pod change !!!</li>
+</ul>
+<h3 id="changes_1">Changes</h3>
+<ul>
+<li>fixed issues from 3.0 version</li>
+<li>fix application freezing @MilosKozak</li>
+<li>fixed DASH driver @avereha</li>
+<li>fixed Dana drivers @MilosKozak</li>
+<li>huge UI improvement, cleanup and unification, migration to material design, styles, white theme, new icons. @Andries-Smit @MilosKozak @osodebailar @Philoul</li>
+<li>widget @MilosKozak</li>
+<li>Aidex CGM support @andyrozman @markvader (Pumpcontrol only)</li>
+<li>Watch <code>Wear OS tiles &lt;../Configuration/Configuration/Watchfaces.mdl#wear-os-tiles&gt;</code>, translations @Andries-Smit</li>
+<li>Wear code refactored. Not backward compatible anymore @MilosKozak</li>
+<li>a11y improvements @Andries-Smit</li>
+<li>new protection option PIN @Andries-Smit</li>
+<li>allow graph scale from menu @MilosKozak</li>
+<li>more statistics available @MilosKozak</li>
+<li>MDI plugin removed in favor of VirtualPump</li>
+<li>new automation action: StopProcessing (following rules)</li>
+</ul>
+<h2 id="version-300">Version 3.0.0</h2>
+<p>Release date: 31-01-2022</p>
+<p>(Releasenotes-important-hints-3-0-0)=</p>
+<h3 id="important-hints_2">Important hints</h3>
+<ul>
+<li><strong>Minimum Android version is 9.0 now.</strong></li>
+<li><strong>Data is not migrated to new database.</strong> Do not complain, it's so huge change so it's simply not possible. Thus after update IOB, COB, treatments etc. will be cleared. You have to create new <a href="../Usage/Profiles.md">profile switch</a> and start with zero IOB and COB. Plan the update carefully!!! Best in situation without active insulin and carbs</li>
+<li>Use the same version of AAPS and NSClient</li>
+</ul>
+<p><strong>Make sure to check and adjust settings after updating to 3.0 as described</strong> <a href="../update3_0/">here</a>.</p>
+<h3 id="preparation-steps">Preparation steps</h3>
+<p><strong>At least two days before update:</strong></p>
+<ul>
+<li>disable Dexcom bridge in Nightscout</li>
+<li>if you are using G5/G6 and xDrip as a collector, you have to update xDrip to a nightly version newer than 14th January 2022</li>
+<li>if you are using G5/G6 switching to BYODA as collector is recommended to take advantage of back-smoothing (you can still use xDrip for other purposes, xDrip can receive data from BYODA)</li>
+</ul>
+<h3 id="changes_2">Changes</h3>
+<ul>
+<li>
+<p>100k lines changed, 105k new lines of code</p>
+</li>
+<li>
+<p><a href="../Configuration/OmnipodDASH.md">Omnipod DASH support</a> @AdrianLxM @avereha @bartsopers @vanelsberg</p>
+</li>
+<li>
+<p><a href="../Configuration/DanaRS-Insulin-Pump.md">Dana-i support</a> @MilosKozak</p>
+</li>
+<li>
+<p><a href="../Configuration/DiaconnG8.md">DiaconnG8 support</a></p>
+</li>
+<li>
+<p>Glunovo support</p>
+</li>
+<li>
+<p>Internal database upgraded to Room @MilosKozak @Tebbe @AdrianLxm @Philoul @andyrozman</p>
+</li>
+<li>
+<p>Lot of code rewritten to Kotlin @MilosKozak</p>
+</li>
+<li>
+<p>New internal interface for pump drivers</p>
+</li>
+<li>
+<p>NSClient rewritten for better synchronization and more detailed customization @MilosKozak</p>
+</li>
+<li>
+<p>Record deletion from NS is not allowed (only invalidation through NSClient)</p>
+</li>
+<li>Record modification from NS is not allowed</li>
+<li>Sync setting available without engineering mode (for parents)</li>
+<li>
+<p>Ability to resync data</p>
+</li>
+<li>
+<p>Profile switch behavior change. Now is distinguished between Profile Switch <em>(something that user wants)</em> and Profile change <em>(when change is executed by pump)</em> @MilosKozak @Tebbe</p>
+</li>
+<li>
+<p>You can start activity temporary target during creation of profile switch @MilosKozak</p>
+</li>
+<li>
+<p>NSProfile is gone, just local profile can be used. Local profile can be <a href="update3_0-nightscout-profile-cannot-be-pushed">synced to NS</a>. @MilosKozak.</p>
+</li>
+<li>
+<p>Forgotten <a href="update3_0-reset-master-password">master password reset procedure</a> @MilosKozak</p>
+</li>
+<li>
+<p>User actions tracing @Philoul</p>
+</li>
+<li>
+<p>New automation TempTargetValue trigger @Philoul</p>
+</li>
+<li>
+<p>New automation Careportal action @Philoul</p>
+</li>
+<li>
+<p>Add Bolus reminder in Carbs Dialog @Philoul</p>
+</li>
+<li>
+<p>Bolus Wizard improvement</p>
+</li>
+<li>
+<p>UI improvements @MilosKozak</p>
+</li>
+<li>
+<p>New user buttons for automations @MilosKozak</p>
+</li>
+<li>
+<p>New automation layout @MilosKozak</p>
+</li>
+<li>
+<p>History browser updated and fixed @MilosKozak</p>
+</li>
+<li>
+<p>Objective9 removed @MilosKozak</p>
+</li>
+<li>
+<p>Fixed bug associated to unstable CGM data @MilosKozak</p>
+</li>
+<li>
+<p>DanaR and DanaRS communication improvement @MilosKozak</p>
+</li>
+<li>
+<p>CircleCI integration @MilosKozak</p>
+</li>
+<li>
+<p>Files location change:</p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>/AAPS/extra (engineering mode)</li>
+<li>/AAPS/logs /AAPS/exports</li>
+<li>/AAPS/preferences</li>
+</ul>
+</blockquote>
+<h2 id="version-282">Version 2.8.2</h2>
+<p>Release date: 23-01-2021</p>
+<ul>
+<li>Please see also <a href="Releasenotes-important-hints-2-8-1-1">important hints for version 2.8.1.1</a> below.</li>
+</ul>
+<h3 id="changes_3">Changes</h3>
+<ul>
+<li>stability improvements</li>
+<li>more tweaking for Android 8+</li>
+<li>improved icons</li>
+<li>watch improvements</li>
+<li>NSClient fixes</li>
+<li>Bolus advisor now works with Pumpcontrol and NSClient</li>
+</ul>
+<h2 id="version-2811">Version 2.8.1.1</h2>
+<p>Release date: 12-01-2021</p>
+<p>(important-hints-2-8-1-1)</p>
+<h3 id="important-hints_3">Important hints</h3>
+<ul>
+<li>Option <strong>NS_UPLOAD_ONLY</strong> has been forced ON for all 2.8.1 users.</li>
+<li>If you use NSClient to enter TT, carbs or profile switches you must turn it off in AAPS but <strong>only in case your synchronization is working well</strong> (ie. you don't see unwanted data changes like self modification of TT, TBR etc).</li>
+<li>ATTENTION: DO NOT do this if you have any other app handle treatments ( like xDrip broadcast/upload/sync...).</li>
+<li>NS_UPLOAD_ONLY can only be turned off if engineering mode is enabled.</li>
+</ul>
+<h3 id="major-changes">Major changes</h3>
+<ul>
+<li>RileyLink, Omnipod and MDT pump improvements and fixes</li>
+<li>forced NS_UPLOAD_ONLY</li>
+<li>fix for SMB &amp; Dexcom app</li>
+<li>watchface fixes</li>
+<li>crash reporting improved</li>
+<li>gradle reverted to allow direct watchface instalation</li>
+<li>automation fixes</li>
+<li>RS driver improvement</li>
+<li>various crashes fixed</li>
+<li>UI fixes and improvements</li>
+<li>new translations</li>
+</ul>
+<p>(Releasenotes-version-2-8-0)=</p>
+<h2 id="version-280">Version 2.8.0</h2>
+<p>Release date: 01-01-2021</p>
+<h3 id="important-hints_4">Important hints</h3>
+<ul>
+<li><strong>Minimum Android version is 8.0 now.</strong> For older Android versions you can still use 2.6.1.4 from old repo.</li>
+<li><a href="Objectives-objective-3-prove-your-knowledge">Objectives have changed.</a> <strong>Finish not completed objectives before update.</strong></li>
+<li>Repository location still on <a href="https://github.com/nightscout/AndroidAPS">https://github.com/nightscout/AndroidAPS</a> . If you are not familiar with git the easiest way for update is remove directory with AAPS and do a <a href="../Building-APK/">new clone</a>.</li>
+<li>Please use <a href="https://developer.android.com/studio/">Android Studio 4.1.1</a> or newer to build the apk.</li>
+</ul>
+<h3 id="major-new-features">Major new features</h3>
+<ul>
+<li><a href="../Configuration/OmnipodEros.md">Omnipod Eros support</a> @bartsopers @andyrozman @ktomy @samspycher @TeleRiddler @vanelsberg @eurenda and special thanks to @ps2 @itsmojo, everybody else involved in the Loop driver for Omnipod and @jlucasvt from GetRileyLink.org</li>
+<li><a href="Preferences-bolus-advisor">bolus advisor</a> &amp; <a href="Screenshots-eating-reminder">eating reminder</a> @MilosKozak</li>
+<li><a href="Watchfaces-new-watchface-as-of-AAPS-2-8">New watchface</a> @rICTx-T1D</li>
+<li>Dana RS connection improvements @MilosKozak</li>
+<li>Removed "Unchanged CGM values" behavior in SMB for Dexcom native app</li>
+<li>New <a href="Preferences-skin">Low Ressolution Skin</a></li>
+<li>New <a href="Open-APS-features-overview-of-hard-coded-limits">"Pregnant" patient type</a> @Brian Quinion</li>
+<li>New NSClient tablet layout @MilosKozak</li>
+<li>NSClient transfer insulin, senstivity and display settings directly from main AAPS @MilosKozak</li>
+<li><a href="../Configuration/Preferences.md">Preferences filter</a> @Brian Quinion</li>
+<li>New pump icons @Rig22 @@teleriddler @osodebailar</li>
+<li>New <a href="Config-Builder-lyumjev">insulin type Lyumjev</a></li>
+<li>SetupWizard improvements @MilosKozak</li>
+<li>Security improvements @dlvoy</li>
+<li>Various improvements and fixes @AdrianLxM @Philoul @swissalpine  @MilosKozak @Brian Quinion</li>
+</ul>
+<p>(Releasenotes-version-2-7-0)=</p>
+<h2 id="version-270">Version 2.7.0</h2>
+<p>Release date: 24-09-2020</p>
+<p><strong>Make sure to check and adjust settings after updating to 2.7 as described</strong> <a href="../update2_7/">here</a>.</p>
+<p>You need at least start <a href="Objectives-objective-10-automation">objective 11 (in later versions objective 10!)</a> in order to continue using <a href="../Usage/Automation.md">Automation feature</a> (all previous objectives must be completed otherwise starting Objective 11 is not possible). If for example you did not finish the exam in <a href="Objectives-objective-3-prove-your-knowledge">objective 3</a> yet, you will have to complete the exam before you can start <a href="Objectives-objective-10-automation">objective 11</a>. This will not effect other objectives you have already finished. You will keep all finished objectives!</p>
+<h3 id="major-new-features_1">Major new features</h3>
+<ul>
+<li>internal use of dependency injection, updates libraries, code rewritten to kotlin @MilosKozak @AdrianLxM</li>
+<li>using modules for Dana pumps @MilosKozak</li>
+<li><a href="../Getting-Started/Screenshots.md">new layout, layout selection</a> @MilosKozak</li>
+<li>new <a href="Preferences-status-lights">status lights layout</a> @MilosKozak</li>
+<li><a href="Screenshots-section-f-main-graph">multiple graphs support</a> @MilosKozak</li>
+<li><a href="../Configuration/profilehelper.md">Profile helper</a> @MilosKozak</li>
+<li>visualization of <a href="Screenshots-visualization-of-dynamic-target-adjustment">dynamic target adjustment</a> @Tornado-Tim</li>
+<li>new <a href="../Configuration/Preferences.md">preferences layout</a> @MilosKozak</li>
+<li>SMB algorithm update @Tornado-Tim</li>
+<li><a href="Preferences-aps-mode">Low glucose suspend mode</a> @Tornado-Tim</li>
+<li><a href="Preferences-carb-required-notification">carbs required notifications</a> @twain47 @Tornado-Tim</li>
+<li>removed Careportal (moved to Actions) @MilosKozak</li>
+<li><a href="../Usage/ExportImportSettings.md">new encrypted backup format</a> @dlvoy</li>
+<li><a href="../Children/SMS-Commands.md">new SMS TOTP authentication</a> @dlvoy</li>
+<li><a href="SMS-Commands-commands">new SMS PUMP CONNECT, DISCONNECT</a> commands @Lexsus</li>
+<li>better support for tiny basals on Dana pumps @Mackwe</li>
+<li>small Insight fixes @TebbeUbben @MilosKozak</li>
+<li><a href="Preferences-general">"Default language" option</a> @MilosKozak</li>
+<li>vector icons @Philoul</li>
+<li><a href="MedtronicPump-configuration-of-the-pump">set neutral temps for MDT pump</a> @Tornado-Tim</li>
+<li>History browser improvements @MilosKozak</li>
+<li>removed OpenAPS MA algorithm @Tornado-Tim</li>
+<li>removed Oref0 sensitivity @Tornado-Tim</li>
+<li><a href="Preferences-protection">Biometric or password protection</a> for settings, bolus @MilosKozak</li>
+<li><a href="../Usage/Automation.md">new automation trigger</a> @PoweRGbg</li>
+<li><a href="../Configuration/OpenHumans.md">Open Humans uploader</a> @TebbeUbben @AdrianLxM</li>
+<li>New documentation @Achim</li>
+</ul>
+<p>(Releasenotes-version-2-6-1-4)=</p>
+<h2 id="version-2614">Version 2.6.1.4</h2>
+<p>Release date: 04-05-2020</p>
+<p>Please use <a href="https://developer.android.com/studio/">Android Studio 3.6.1</a> or newer to build the apk.</p>
+<h3 id="major-new-features_2">Major new features</h3>
+<ul>
+<li>Insight: Disable vibration on bolus for firmware version 3 - second attempt</li>
+<li>Otherwise is equal to 2.6.1.3. Update is optional.</li>
+</ul>
+<h2 id="version-2613">Version 2.6.1.3</h2>
+<p>Release date: 03-05-2020</p>
+<p>Please use <a href="https://developer.android.com/studio/">Android Studio 3.6.1</a> or newer to build the apk.</p>
+<h3 id="major-new-features_3">Major new features</h3>
+<ul>
+<li>Insight: Disable vibration on bolus for firmware version 3</li>
+<li>Otherwise is equal to 2.6.1.2. Update is optional.</li>
+</ul>
+<h2 id="version-2612">Version 2.6.1.2</h2>
+<p>Release date: 19-04-2020</p>
+<p>Please use <a href="https://developer.android.com/studio/">Android Studio 3.6.1</a> or newer to build the apk.</p>
+<h3 id="major-new-features_4">Major new features</h3>
+<ul>
+<li>Fix crashing in Insight service</li>
+<li>Otherwise is equal to 2.6.1.1. If you are not affected by this bug you don't need to upgrade.</li>
+</ul>
+<h2 id="version-2611">Version 2.6.1.1</h2>
+<p>Release date: 06-04-2020</p>
+<p>Please use <a href="https://developer.android.com/studio/">Android Studio 3.6.1</a> or newer to build the apk.</p>
+<h3 id="major-new-features_5">Major new features</h3>
+<ul>
+<li>Resolves SMS CARBS command issue while using Combo pump</li>
+<li>Otherwise is equal to 2.6.1. If you are not affected by this bug you don't need to upgrade.</li>
+</ul>
+<h2 id="version-261">Version 2.6.1</h2>
+<p>Release date: 21-03-2020</p>
+<p>Please use <a href="https://developer.android.com/studio/">Android Studio 3.6.1</a> or newer to build the apk.</p>
+<h3 id="major-new-features_6">Major new features</h3>
+<ul>
+<li>Allow to enter only <code>https://</code> in NSClient settings</li>
+<li>Fixed <a href="../Getting-Started/Glossary.md">BGI</a> displaying bug on watches</li>
+<li>Fixed small UI bugs</li>
+<li>Fixed Insight crashes</li>
+<li>Fixed future carbs with Combo pump</li>
+<li>Fixed <a href="Config-Builder-upload-local-profiles-to-nightscout">LocalProfile -&gt; NS sync</a></li>
+<li>Insight alerts improvements</li>
+<li>Improved detection of boluses from pump history</li>
+<li>Fixed NSClient connection settings (wifi, charging)</li>
+<li>Fixed sending of calibrations to xDrip</li>
+</ul>
+<p>(Releasenotes-version-2-6-0)=</p>
+<h2 id="version-260">Version 2.6.0</h2>
+<p>Release date: 29-02-2020</p>
+<p>Please use <a href="https://developer.android.com/studio/">Android Studio 3.6.1</a> or newer to build the apk.</p>
+<h3 id="major-new-features_7">Major new features</h3>
+<ul>
+<li>
+<p>Small design changes (startpage...)</p>
+</li>
+<li>
+<p>Careportal tab / menu removed - more details <a href="../Usage/CPbefore26.md">here</a></p>
+</li>
+<li>
+<p>New <a href="Config-Builder-local-profile">Local Profile plugin</a></p>
+</li>
+<li>
+<p>Local profile can hold more than 1 profile</p>
+</li>
+<li>Profiles can be cloned and edited</li>
+<li>Ability of upload profiles to NS</li>
+<li>Old profile switches can be cloned to new profile in LocalProfile (timeshift and percentage is applied)</li>
+<li>
+<p>Veritical NumberPicker for targets</p>
+</li>
+<li>
+<p>SimpleProfile is removed</p>
+</li>
+<li>
+<p><a href="Extended-Carbs-extended-bolus-and-switch-to-open-loop-dana-and-insight-pump-only">Extended bolus</a> feature - closed loop will be disabled</p>
+</li>
+<li>
+<p>MDT plugin: Fixed bug with duplicated entries</p>
+</li>
+<li>
+<p>Units are not specified in profile but it's global setting</p>
+</li>
+<li>
+<p>Added new settings to startup wizard</p>
+</li>
+<li>
+<p>Different UI and internal improvements</p>
+</li>
+<li>
+<p><a href="../Configuration/Watchfaces.md">Wear complications</a></p>
+</li>
+<li>
+<p>New <a href="../Children/SMS-Commands.md">SMS commands</a> BOLUS-MEAL, SMS, CARBS, TARGET, HELP</p>
+</li>
+<li>
+<p>Fixed language support</p>
+</li>
+<li>
+<p>Objectives: <a href="Objectives-go-back-in-objectives">Allow to go back</a>, Time fetching dialog</p>
+</li>
+<li>
+<p>Automation: <a href="Automation-sort-automation-rules">allow sorting</a></p>
+</li>
+<li>
+<p>Automation: fixed bug when automation was running with disabled loop</p>
+</li>
+<li>
+<p>New status line for Combo</p>
+</li>
+<li>
+<p>GlucoseStatus improvement</p>
+</li>
+<li>
+<p>Fixed TempTarget NS sync</p>
+</li>
+<li>
+<p>New statistics activity</p>
+</li>
+<li>
+<p>Allow Extended bolus in open loop mode</p>
+</li>
+<li>
+<p>Android 10 alarm support</p>
+</li>
+<li>
+<p>Tons on new translations</p>
+</li>
+</ul>
+<h2 id="version-251">Version 2.5.1</h2>
+<p>Release date: 31-10-2019</p>
+<p>Please note the <a href="Releasenotes-important-notes-2-5-0">important notes</a> and <a href="Releasenotes-is-this-update-for-me-currently-is-not-supported">limitations</a> listed for <a href="Releasenotes-version-2-5-0">version 2.5.0</a>.
+* Fixed a bug in the network state receiver that lead to crashes with many (not critical but would waste a lot of energy re-calculating things).
+* New versioning that will allow to do minor updates without triggering the update-notification.</p>
+<p>(Releasenotes-version-2-5-0)=</p>
+<h2 id="version-250">Version 2.5.0</h2>
+<p>Release date: 26-10-2019</p>
+<p>(Releasenotes-important-notes-2-5-0)=</p>
+<h3 id="important-notes">Important notes</h3>
+<ul>
+<li>Please use <a href="https://developer.android.com/studio/">Android Studio Version 3.5.1</a> or newer to <a href="../Building-APK/">build the apk</a> or <a href="../Installing-AndroidAPS/Update-to-new-version.html">update</a>.</li>
+<li>If you are using xDrip <a href="xdrip-identify-receiver">identify receiver</a> must be set.</li>
+<li>If you are using Dexcom G6 with the patched Dexcom app you will need the version from the <a href="https://github.com/dexcomapp/dexcomapp/tree/master/2.4">2.4 folder</a>.</li>
+<li>Glimp is supported from version 4.15.57 and newer.</li>
+</ul>
+<p>(Releasenotes-is-this-update-for-me-currently-is-not-supported)=</p>
+<h3 id="is-this-update-for-me-currently-is-not-supported">Is this update for me? Currently is NOT supported</h3>
+<ul>
+<li>Android 5 and lower</li>
+<li>Poctech</li>
+<li>600SeriesUploader</li>
+<li>Patched Dexcom from 2.3 directory</li>
+</ul>
+<h3 id="major-new-features_8">Major new features</h3>
+<ul>
+<li>Internal change of targetSDK to 28 (Android 9), jetpack support</li>
+<li>RxJava2, Okhttp3, Retrofit support</li>
+<li>Old <a href="../Configuration/MedtronicPump.md">Medtronic pumps</a> support (RileyLink need)</li>
+<li>New <a href="../Usage/Automation.md">Automation plugin</a></li>
+<li>Allow to <a href="Preferences-advanced-settings-overview">bolus only part</a> from bolus wizard calculation</li>
+<li>Rendering insulin activity</li>
+<li>Adjusting IOB predictions by autosens result</li>
+<li>New support for patched Dexcom apks (<a href="https://github.com/dexcomapp/dexcomapp/tree/master/2.4">2.4 folder</a>)</li>
+<li>Signature verifier</li>
+<li>Allow to bypass objectives for OpenAPS users</li>
+<li>New <a href="../Usage/Objectives.md">objectives</a> - exam, application handling
+  (If you started at least objective "Starting on an open loop" in previous versions exam is optional.)</li>
+<li>Fixed bug in Dana* drivers where false time difference was reported</li>
+<li>Fixed bug in <a href="../Children/SMS-Commands.md">SMS communicator</a></li>
+</ul>
+<h2 id="version-23">Version 2.3</h2>
+<p>Release date: 25-04-2019</p>
+<h3 id="major-new-features_9">Major new features</h3>
+<ul>
+<li>Important safety fix for Insight (really important if you use Insight!)</li>
+<li>Fix History-Browser</li>
+<li>Fix delta calculations</li>
+<li>Language updates</li>
+<li>Check for GIT and warn on gradle upgrade</li>
+<li>More automatic testing</li>
+<li>Fixing potential crash in AlarmSound Service (thanks @lee-b !)</li>
+<li>Fix broadcast of BG data (works independently of SMS permission now!)</li>
+<li>New Version-Checker</li>
+</ul>
+<h2 id="version-222">Version 2.2.2</h2>
+<p>Release date: 07-04-2019</p>
+<h3 id="major-new-features_10">Major new features</h3>
+<ul>
+<li>Autosens fix: deactivate TT raises/lowers target</li>
+<li>New translations</li>
+<li>Insight driver fixes</li>
+<li>SMS plugin fix</li>
+</ul>
+<h2 id="version-22">Version 2.2</h2>
+<p>Release date: 29-03-2019</p>
+<h3 id="major-new-features_11">Major new features</h3>
+<ul>
+<li><a href="Timezone-traveling-time-adjustment-daylight-savings-time-dst">DST fix</a></li>
+<li>Wear Update</li>
+<li><a href="../Children/SMS-Commands.md">SMS plugin</a> update</li>
+<li>Go back in objectives.</li>
+<li>Stop loop if phone disk is full</li>
+</ul>
+<h2 id="version-21">Version 2.1</h2>
+<p>Release date: 03-03-2019</p>
+<h3 id="major-new-features_12">Major new features</h3>
+<ul>
+<li><a href="../Configuration/Accu-Chek-Insight-Pump.md">Accu-Chek Insight</a> support (by Tebbe Ubben and JamOrHam)</li>
+<li>Status lights on main screen (Nico Schmitz)</li>
+<li>Daylight saving time helper (Roumen Georgiev)</li>
+<li>Fix processing profile names comming from NS (Johannes Mockenhaupt)</li>
+<li>Fix UI blocking (Johannes Mockenhaupt)</li>
+<li>Support for updated G5 app (Tebbe Ubben and Milos Kozak)</li>
+<li>G6, Poctech, Tomato, Eversense BG source support (Tebbe Ubben and Milos Kozak)</li>
+<li>Fixed disabling SMB from preferences (Johannes Mockenhaupt)</li>
+</ul>
+<h3 id="misc">Misc</h3>
+<ul>
+<li>If you are using non default <code>smbmaxminutes</code> value you have to setup this value again</li>
+</ul>
+<h2 id="version-20">Version 2.0</h2>
+<p>Release date: 03-11-2018</p>
+<h3 id="major-new-features_13">Major new features</h3>
+<ul>
+<li>oref1/SMB support (<a href="https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/oref1.html">oref1 documentation</a>) Be sure to read the documentation to know what to expect of SMB, how it will behave, what it can achieve and how to use it so it can operate smoothly.</li>
+<li><a href="../Configuration/Accu-Chek-Combo-Pump.md">_Accu-Chek Combo</a> pump support</li>
+<li>Setup wizard: guides you through the process of setting up AAPS</li>
+</ul>
+<p>(Releasenotes-settings-to-adjust-when-switching-from-ama-to-smb)=</p>
+<h3 id="settings-to-adjust-when-switching-from-ama-to-smb">Settings to adjust when switching from AMA to SMB</h3>
+<ul>
+<li>
+<p>Objective 10 must be started for SMBs to be enabled (SMB tab generally shows what restrictions apply)</p>
+</li>
+<li>
+<p>maxIOB now includes _all_ IOB, not just added basal. That is, if given a bolus of 8 U for a meal and maxIOB is 7 U, no SMBs will be delivered until IOB drops below 7 U.</p>
+</li>
+<li>
+<p>min_5m_carbimpact default has changed from 3 to 8 going from AMA to SMB. If you are upgrading from AMA to SMB, you have to change it manually</p>
+</li>
+<li>
+<p>Note when building AAPS 2.0 apk: Configuration on demand is not supported by the current version of the Android Gradle plugin! If your build fails with an error regarding "on demand configuration" you can do the following:</p>
+</li>
+<li>
+<p>Open the Preferences window by clicking File &gt; Settings (on Mac, Android Studio &gt; Preferences).</p>
+</li>
+<li>In the left pane, click Build, Execution, Deployment &gt; Compiler.</li>
+<li>Uncheck the Configure on demand checkbox.</li>
+<li>Click Apply or OK.</li>
+</ul>
+<p>(Releasenotes-overview-tab)=</p>
+<h3 id="overview-tab">Overview tab</h3>
+<ul>
+<li>Top ribbon gives access to suspend/disable loop, view/adjust profile and to start/stop temporary targets (TTs). TTs use defaults set in preferences. The new Hypo TT option is a high temp TT to prevent the loop from too aggressively overcorrection rescue carbs.</li>
+<li>Treatment buttons: old treatment button still available, but hidden by default. Visibility of buttons can now be configured. New insulin button, new carbs button (including <a href="../Usage/Extended-Carbs.md">eCarbs/extended carbs</a>)</li>
+<li><a href="../Getting-Started/Screenshots-prediction-lines">Colored prediction lines</a></li>
+<li>Option to show a notes field in insulin/carbs/calculator/prime+fill dialogs, which are uploaded to NS</li>
+<li>Updated prime/fill dialog allows priming and creating careportal entries for site change and cartridge change</li>
+</ul>
+<h3 id="watch">Watch</h3>
+<ul>
+<li>Separate build variant dropped, included in regular full build now. To use bolus controls from watch, enable this setting on the phone</li>
+<li>Wizard now only asks for carbs (and percentage if enabled in watch settings). Which parameters are included in the calculation can be configured in the settings on the phone</li>
+<li>confirmations and info dialogs now work on wear 2.0 as well</li>
+<li>Added eCarbs menu entry</li>
+</ul>
+<h3 id="new-plugins">New plugins</h3>
+<ul>
+<li>PocTech app as BG source</li>
+<li>Dexcom patched app as BG source</li>
+<li>oref1 sensitivity plugin</li>
+</ul>
+<h3 id="misc_1">Misc</h3>
+<ul>
+<li>App now uses drawer to show all plugins; plugins selected as visible in config builder are shown as tabs on top (favourites)</li>
+<li>Overhaul for config builder and objectives tabs, adding descriptions</li>
+<li>New app icon</li>
+<li>Lots of improvements and bugfixes</li>
+<li>Nightscout-independent alerts if pump is unreachable for a longer time (e.g. depleted pump battery) and missed BG readings (see <em>Local alerts</em> in settings)</li>
+<li>Option to keep screen on</li>
+<li>Option to show notification as Android notification</li>
+<li>Advanced filtering (allowing to always enable SMB and 6h after meals) supported with patched Dexcom app or xDrip with G5 native mode as BG source.</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2024</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2024</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tooltips", "content.action.edit", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

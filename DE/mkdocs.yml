@@ -1,0 +1,83 @@
+site_name: AndroidAPS 3.2 Dokumentation
+repo_url: https://github.com/peterleimbach/aapsmkdocstest
+edit_uri: edit/main/docs/
+watch:
+  - includes
+markdown_extensions:
+  - toc:
+      toc_depth: 4
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - abbr
+  - attr_list
+  - pymdownx.snippets:
+      auto_append:
+        - './includes/abbreviations.md'
+plugins:
+  - search:
+  - git-revision-date-localized:
+      enable_creation_date: true
+theme:
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  name: 'material'
+  # name: 'readthedocs'
+  features:
+    - content.tooltips
+    - content.action.edit
+    #- navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    #- navigation.sections
+    - navigation.indexes 
+    #- navigation.expand
+    - navigation.top
+    # includes the page toc in the navigation on the left - I don't like it.
+    #-toc.integrate 
+    - toc.follow
+  #plugins:
+  #  - git-revision-date-localized:
+  #      enable_creation_date: true
+    - search.suggest
+    - search.highlight
+    - search.share
+extra:
+  alternate:
+    - name: English
+      link: /
+      lang: en
+    - name: Deutsch
+      link: /de/
+      lang: de
+nav:
+- Home:
+    - index.md
+    - Introduction : 'introduction.md'
+- Getting Started:
+    - 'Preparing': 'preparing.md'
+- Setting up AAPS:
+    - 'Setting up the reporting server' : 'Installing-AndroidAPS/setting-up-the-reporting-server.md'
+    - 'Building AAPS': 'Installing-AndroidAPS/building-AAPS.md'
+    - 'Transfering and Installing AAPS': 'Installing-AndroidAPS/Transferring-and-installing-AAPS.md'
+    - 'Setup Wizard' : 'Installing-AndroidAPS/setup-wizard.md'
+    - 'Change AAPS configuration': 'Installing-AndroidAPS/change-configuration.md'
+    - Advanced:
+        - 'Sandbox 1a': 'Sandbox/sandbox1.md'
+        - 'Sandbox 2a': 'Sandbox/sandbox2.md'
+- Remote Control and Following:
+    - 'Remote Control': 'remote-control.md'
+    - 'Following Only': 'following-only.md'
+- Sandbox:
+    - 'Sandbox 1': 'Sandbox/sandbox1.md'
+    - 'Sandbox 2': 'Sandbox/sandbox2.md'
