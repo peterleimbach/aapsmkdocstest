@@ -1,29 +1,5 @@
 # internal sandbox file 1 for testing our sprint
 
-!!! note
-
-```
-This my note!
-```
-
-!!! warning no need to translate this
-
-```
-No need to translate this.
-```
-
-!!! danger
-
-```
-Here is danger on the road.
-```
-
-Test IoB
-
-W3C
-
-"The number 43 is, in The Hitchhiker's Guide to the Galaxy by Douglas Adams, the "Answer to the Ultimate Question of Life, the Universe, and Everything," calculated by an enormous supercomputer named Deep Thought over a period of 7.5 million years." - [Wikipedia](https://en.wikipedia.org/wiki/42_\(number\)).
-
 This is an external link [Wikipedia](https://www.wikipedia.org).
 
 [Google.de](https://www.google.com)
