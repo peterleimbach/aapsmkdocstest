@@ -1,4 +1,4 @@
-# Welcome to the AAPS documentation
+# Willkommen in der AAPS-Dokumentation
 
 ![image](./images/basic-outline-of-AAPS.png)
 
